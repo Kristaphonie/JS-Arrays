@@ -2,6 +2,13 @@
 
 
 var arr = [10,20,30];
+
+function first ()
+{
+  return arr[0];
+}
+
+first();
 //Create a function named 'first' that is given 'arr' as the argument and  returns the first item the given array.
 
   //Code Here
@@ -9,9 +16,14 @@ var arr = [10,20,30];
 
 //Next problem
 
-
-
 var arr = [40,50,60];
+
+function last ()
+{
+  return arr[2];
+}
+
+last();
 //Create a function named 'last' that is given 'arr' as the argument and returns the last item the given array.
 
 
@@ -22,6 +34,16 @@ var arr = [40,50,60];
 
 
 var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
+
+function looper ()
+{
+  for(var i = 0; i < family.length; i++)
+  {
+    alert(family[i]);
+  }
+}
+
+looper();
 //Create a function named 'looper' that is given family as it's only argument, loops through the given array, and alerts every item in the array.
 
   //Code Here
@@ -32,6 +54,16 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 
 
 var letters = ['A', 'B', 'C', 'D', 'E'];
+
+function reversedLooper ()
+{
+  for (var i = letters.length -1; i != -1; i--)
+  {
+    alert(letters[i]);
+  }
+}
+
+reversedLooper();
 //Write a function called reversedLooper that is given letters as it's only argument and loops through the given array backwards alerting every item in the array starting at the end.
 
   //Code Here
@@ -41,6 +73,24 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 
 
 var nums = [1,2,3,6,22,98,45,23,22,12];
+
+function evenFinder ()
+{
+  for (var i = 0; i < nums.length; i++)
+  {
+    if (nums[i] % 2 === 0)
+    {
+
+    }
+    else
+    {
+      nums.splice(i, 1);
+    }
+  }
+  return nums;
+}
+
+evenFinder(nums);
 //Write a function named evenFinder that is given nums as it's only argument and removes all values that aren't even from the given array.
 
   //Code Here
@@ -52,6 +102,26 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 var nums = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 var evens = [];
 var odds = [];
+var arr = [];
+
+function divider ()
+{
+  for (var i = 0; i < nums.length; i++)
+  {
+    if (nums[i] % 2 === 0)
+    {
+      evens.push(nums[i]);
+    }
+    else
+    {
+      odds.push(nums[i]);
+    }
+  }
+  arr.push(evens, odds);
+  return arr;
+}
+
+divider(arr);
 //Write a function called divider that is given three arguments, nums, evens, and odds.
 //Have divider return an Array with the first item in the array being the evens array (all the even values from nums) and the second item in the Array being the odds array(all the odd values from nums).
 
@@ -67,6 +137,21 @@ var getRandomArbitrary = function() {
   return Math.floor(Math.random() * (30 - 0) + 0);
 }
 var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
+
+function finder ()
+{
+  var randNum = getRandomArbitrary();
+  if (numbers.indexOf(randNum))
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
+
+finder();
 //Above you're given a function that will return a random number between 0 and 30, and an array full or numbers. Your job is to write a function named finder that will get a random number, then loop through the array to see if that random number is in the array. If it is, return true, if it's not, return false
 
   //Code Here
@@ -77,6 +162,13 @@ var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 
 
 var str = 'this is my sentence';
+
+function reverse ()
+{
+  return str.split("").reverse().join("");
+}
+
+reverse();
 //Write a function called reverse that takes is given str as it's only argument and returns that string after it's been reversed
 
   //Code Here
@@ -86,6 +178,26 @@ var str = 'this is my sentence';
 
 
 var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
+
+function removeItem (removedItem)
+{
+  var index = myGroceryList.indexOf(removedItem);
+  if (index !== -1)
+  {
+    myGroceryList.splice(index, 1);
+    return myGroceryList;
+  }
+}
+
+function addItem (addedItem)
+{
+  myGroceryList.push(addedItem);
+  return myGroceryList;
+}
+
+removeItem("chips");
+
+addItem("Jerky");
 /*
   Here we're going to write a function that mimics going shopping and checking things off of our grocery list,
   and adding new items to our list. 
